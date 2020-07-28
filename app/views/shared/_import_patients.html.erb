@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">Import Patient</div>
+  <div class="card-body">
+    <%= form_for :import, url: :import_patients, html: { method: :post } do |f| %>
+      <div class="form-field">
+        <label>File</label>
+        <%= f.file_field :file, class: "" %>
+      </div>
+      <div class="actions mt-2">
+        <%= f.submit "Import", class: "btn btn-sm btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

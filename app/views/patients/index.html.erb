@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <%= render 'shared/import_patients' %>
+    </div>
+  </div>
+  <hr>
+  <table id="patients" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Date</th>
+        <th scope="col">Number</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.name %></td>
+          <td><%= patient.date.strftime("%d/%m/%Y") %></td>
+          <td><%= patient.number %></td>
+          <td><%= patient.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
